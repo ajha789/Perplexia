@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CodeBlock } from "./code-block";
 import type { Message } from "@shared/schema";
+import perplexiaLogo from "@assets/generated_images/perplexia_ai_brain_logo.png";
 
 interface MessageListProps {
   messages: Message[];
@@ -120,8 +121,12 @@ export function MessageList({ messages, isLoading, onDownloadProject }: MessageL
       <div className="max-w-4xl mx-auto p-6 space-y-6">
         {messages.length === 0 && !isLoading && (
           <div className="text-center py-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-              <Bot className="h-8 w-8 text-primary" />
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-4 overflow-hidden">
+              <img 
+                src={perplexiaLogo} 
+                alt="Perplexia AI" 
+                className="w-16 h-16 object-contain"
+              />
             </div>
             <h2 className="text-xl font-semibold mb-2">Welcome to Perplexia</h2>
             <p className="text-muted-foreground max-w-md mx-auto">
